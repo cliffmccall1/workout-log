@@ -1,0 +1,70 @@
+<div class="background"><div class="gradient"></div></div>
+<mat-card class="profile-card">
+  <mat-spinner *ngIf="isLoading"></mat-spinner>
+  <form
+    (submit)="onSaveProfile(profileForm)"
+    #profileForm="ngForm"
+    *ngIf="!isLoading"
+  >
+    <!-- Choose Avatar -->
+    <mat-form-field>
+      <mat-select
+        placeholder="What makes you sweat?"
+        name="avatar"
+        [ngModel]="profile?.avatar"
+      >
+        <mat-option
+          value="https://lh3.googleusercontent.com/6HFTAiF84Ap2_Ois46UkF2C78R6FlhH-nQIMsVEpyNtGqNTmhQNh366b5yBHsDZe7pjmpsgFmcr2S4R6PRlLBlduM23vcVKvcgpBzKzdUfJW2IuuEwRVUE-8ktmlwiTd0atL-tWRjA=w2400"
+          >Running</mat-option
+        >
+        <mat-option
+          value="https://lh3.googleusercontent.com/lYQ9PD3C3UjtiMUyTW1KLBP30aAWmuYmObbH4lQvQY26dv2TEMPwnco5La_IsMAYuHmVvRIeq0GorHbvFP4tVJgLDeQ-2wXHuWJ-aECQCq32VggN0GIfqJVdFmhrhkz-DJvEk7tLfQ=w2400"
+          >Weightlifting</mat-option
+        >
+        <mat-option
+          value="https://lh3.googleusercontent.com/esl1RYPGAoqlbLrSHAaFAmCSVIbKk2glp-2Q42A3L4vrdy-TkJDwi6c4b01NVaPCGlZ63fwFzH3Tg23ImRocxLx9RIeEJ4k9xQK06efu0TKyS6Z42lOl5folXt314bezPQURI5l8-g=w2400"
+          >Functional Fitness</mat-option
+        >
+        <mat-option
+          value="https://lh3.googleusercontent.com/Uht-T45LNK-dhT68fa24W3uTlhrksNDOp2bRWH6OvVEPDoAxW3KeyJHWKE4I-luQNBRfkuST_2ctOKRbTHdvFafS8J12xPYOKhn3o8PyJxeCErDw-tfpberXaPds7DjAGsPn461SMg=w2400"
+          >Cycling</mat-option
+        >
+        <mat-option value="../../../assets/images/pilates.jpg"
+          >Pilates</mat-option
+        >
+        <mat-option
+          value="https://lh3.googleusercontent.com/b86IKl5cLn6Rq8rxIqIESZm6dRORbum9RKkboN1TBYs-RJ7QmZDlCvYOzmrk1betP0vEP8OYniS-IbfBDLqfg7_CPwXUISnU97Lt3JKAtvuIGk0hoVVorcK4hDJWnA42cW-qfkEPnw=w2400"
+          >Swimming</mat-option
+        >
+      </mat-select>
+    </mat-form-field>
+    <br />
+
+    <!-- Display Name -->
+    <mat-form-field>
+      <input
+        matInput
+        name="displayName"
+        [ngModel]="profile?.displayName"
+        placeholder="Display Name"
+      /> </mat-form-field
+    ><br />
+    <!-- textarea for main content -->
+    <mat-form-field>
+      <textarea
+        matInput
+        rows="4"
+        name="motivation"
+        [ngModel]="profile?.motivation"
+        placeholder="Good Things Come to Those Who Sweat!"
+        #content="ngModel"
+      ></textarea>
+      <!--
+        <mat-error *ngIf="motivation.invalid">Tell us where all that sweat came from.</mat-error>
+      --> </mat-form-field
+    ><br />
+    <!-- Submit button -->
+    <button mat-raised-button color="accent" type="submit">Save</button>
+    <a mat-raised-button routerLink="/profile">Cancel</a>
+  </form>
+</mat-card>

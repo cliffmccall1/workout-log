@@ -1,0 +1,124 @@
+<div class="background">
+
+</div>
+<div class="container-fluid">
+  <div class="row">
+    <!-- Map needs to be in the left -->
+    <div class="map col-sm-12 col-md-8 col-lg-8">
+
+      <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" [disableDefaultUI]="false" [zoomControl]="true">
+
+        <agm-marker *ngFor="let m of markers; let i = index" (markerClick)="clickedMarker(m, i)" [latitude]="m.lat"
+          [longitude]="m.lng">
+
+          <agm-info-window>
+            <strong>{{m.name}}</strong>
+          </agm-info-window>
+
+        </agm-marker>
+
+      </agm-map>
+    </div>
+    <!-- Addresses of gyms on the right -->
+    <div class="addresses col-sm-12 col-md-4 col-lg-4">
+      <mat-accordion>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Align
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          1615 Placer St. Redding CA 96001
+          <br>
+          +1 530-961-3983
+          <br>
+          <a href="https://www.experiencealign.com/">Website</a>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Anytime Fitness
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          3325-3331 Placer St. Redding CA 96001
+          <br>
+          +1 530-255-8087
+          <br>
+          <a href="https://www.anytimefitness.com/gyms/2615/Redding-CA-96001/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=2615">Website</a>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              CrossFit Redding
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          5211 Churn Creek Rd. Redding CA 96001
+          <br>
+          +1 530-691-9169
+          <br>
+          <a href="http://www.crossfitredding.com">Website</a>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Everyday Fitness and Training
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          2345 Athens Ave. Redding CA 96001
+          <br>
+          +1 530-246-1902
+          <br>
+          <a href="http://www.edfitness.com/">Website</a>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Monster Fitness
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          145 Locust St. Redding CA 96001
+          <br>
+          +1 530-949-3477
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Planet Fitness
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          1725 Hilltop Dr. Redding CA 96001
+          <br>
+          +1 530-395-5800
+          <br>
+          <a href="https://www.planetfitness.com/gyms/redding-ca">Website</a>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Shasta Athletic Club
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          1988 Park Marina Dr. Redding CA 96001
+          <br>
+          +1 530-241-7711
+          <br>
+          <a href="http://shastaathleticclub.com">Website</a>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Sun Oaks Tennis and Fitness
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          3452 Argyle Rd. Redding CA 96001
+          <br>
+          +1 530-221-4405
+          <br>
+          <a href="https://sunoaks.com/">Website</a>
+        </mat-expansion-panel>
+      </mat-accordion>
+
+    </div>
+
+  </div>
+</div>

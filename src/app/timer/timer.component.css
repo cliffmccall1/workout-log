@@ -1,0 +1,87 @@
+button:focus {
+  outline: 0;
+}
+.timer-card {
+  top: 2em;
+  text-align: center;
+  width: 75%;
+  margin: auto;
+  background-color: rgba(255, 255, 255, 0.849);
+}
+p {
+  font-size: 10rem;
+  color: black;
+}
+
+/* .timer {
+  background-color: rgba(255, 255, 255, 0.849);
+  max-width: 75%;
+  top: 2em;
+  margin: auto;
+  same as mat-card
+} */
+
+.background {
+  position: absolute;
+  top: 55px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: url('../../assets/images/swim2.jpg') no-repeat center top;
+  background-size: cover;
+  content: '';
+  z-index: -1;
+  display: grid;
+}
+/* added so number fit in card on smaller screens */
+@media (max-width: 700px) {
+  p {
+    font-size: 5em;
+  }
+  .gradient {
+    position: absolute;
+    top: 0%;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    content: '';
+    z-index: 0;
+    background: linear-gradient(rgba(255, 255, 255, 0), rgb(255, 255, 255));
+  }
+}
+
+/*mat-card {
+  position: absolute;
+  top: 5em;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  /*background:('https://images.pexels.com/photos/261403/pexels-photo-261403.jpeg?auto=compress&cs=tinysrgb&h=350')
+    no-repeat center top;
+  background-size: cover;
+  content: '';
+  z-index: 0;
+  display: grid;
+}
+
+.body {
+  opacity: 0.8;
+  filter: alpha(opacity=30);
+  width: 85%;
+  top: 10em;
+  margin: auto;
+  height: flex;
+}
+
+button {
+  text-align: center;
+  height: 100px;
+  width: 300px;
+  margin: auto;
+  background-color: rgb(245, 22, 22);
+  color: black;
+  padding: 25px 25px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 35px;
+}*/

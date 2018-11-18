@@ -1,0 +1,38 @@
+mat-form-field {
+  width: 100%;
+}
+
+mat-spinner {
+  margin: auto;
+}
+.background {
+  position: absolute;
+  top: 55px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: url('https://lh3.googleusercontent.com/dK_LiG2_qwiADkiDRGnwHXGNPAJEP3eZhS_LQshxdtISxsdrlApgayxzksOoBcfKqJtN4q0ZfvjuOdn7JXDy7hgX1yQJ22eyyT7NvHTwsArh3H-EiFlMvGR8Zhp_4LLF-A5gnaLjPg=w2400')
+    no-repeat center top;
+  background-size: cover;
+  content: '';
+  z-index: -1;
+  display: grid;
+}
+.login-card {
+  /* top: 3em; mat-card was not centering top and bottom (not including tool bar)*/
+  margin: auto;
+  background-color: rgba(255, 255, 255, 0.849);
+  max-width: 75%;
+}
+@media (max-width: 700px) {
+  .gradient {
+    position: absolute;
+    top: 0%;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    content: '';
+    z-index: 0;
+    background: linear-gradient(rgba(255, 255, 255, 0), rgb(255, 255, 255));
+  }
+}

@@ -1,0 +1,48 @@
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+@mixin global-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+  $forground: map-get($theme, forground);
+  $background: map-get($theme, background);
+
+  .mat-drawer {
+    background-color: mat-color($background, background);
+  }
+
+  .text-box,
+  .mat-card {
+    background-color: mat-color($background, background);
+  }
+}
+
+$default-theme: mat-light-theme(
+  mat-palette($mat-gray, 900),
+  mat-palette($mat-red, 400, 500, 600),
+  mat-palette($mat-red)
+);
+$one-theme: mat-light-theme(
+  mat-palette($mat-red),
+  mat-palette($mat-gray, 900),
+  mat-palette($mat-red)
+);
+$two-theme: mat-light-theme(
+  mat-palette($mat-pink, A700),
+  mat-palette($mat-purple, 400),
+  mat-palette($mat-red)
+);
+
+.default-theme {
+  @include angular-material-theme($default-theme);
+}
+.one-theme {
+  @include angular-material-theme($one-theme);
+  @include global-theme($one-theme);
+}
+
+.two-theme {
+  @include angular-material-theme($two-theme);
+}

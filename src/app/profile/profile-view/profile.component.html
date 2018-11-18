@@ -1,0 +1,56 @@
+<div class="background"><div class="gradient"></div></div>
+<div class="container-fluid">
+  <div class="row">
+    <mat-spinner *ngIf="isLoading"></mat-spinner>
+    <!-- Profile needs to be in the left -->
+    <div class="profile col-sm-12 col-md-4 col-lg-4">
+      <!-- Shows after profile is updated -->
+      <div *ngFor="let profile of profiles">
+        <img src="{{profile.avatar}}" alt="" />
+        <mat-card class="text-box">
+          <h1>{{ profile.displayName }}</h1>
+          {{ profile.motivation }}
+        </mat-card>
+        <a
+          mat-raised-button
+          color="primary"
+          [routerLink]="['/edit-profile', profile.id]"
+          >Edit Profile</a
+        >
+        <a mat-raised-button color="primary" (click)="changeTheme()">Theme</a>
+      </div>
+      <!-- shows if profile info is not updated -->
+      <div *ngIf="profiles.length <= 0 && !isLoading">
+        <mat-card class="welcome">
+          <h1>Welcome to your Workout Log!</h1>
+          <p>
+            Click below to update your profile and add a motovational quote or
+            personal message to keep you sweating.
+          </p>
+        </mat-card>
+        <a mat-raised-button color="primary" routerLink="/profile-edit"
+          >Add Info</a
+        >
+        <a mat-raised-button color="primary" (click)="changeTheme()">Theme</a>
+      </div>
+      <!-- Nav buttons to log view and create -->
+      <div class="buttons">
+        <a mat-raised-button color="accent" routerLink="/create"> New Log </a>
+        &nbsp;
+        <a mat-raised-button color="accent" routerLink="/log">
+          View Your Logs Here
+        </a>
+      </div>
+    </div>
+    <!-- Benchmarks to the left -->
+    <div class="benchmarks col-sm-12 col-md-8 col-lg-8">
+      <app-benchmark-list></app-benchmark-list>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12"><app-log-list></app-log-list></div>
+  </div>
+</div>

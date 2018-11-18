@@ -1,0 +1,41 @@
+<mat-spinner *ngIf="isLoading"></mat-spinner>
+<!-- <p class="info-text mat-body-1" *ngIf="benchmarks.length <= 0 && !isLoading">No Benchmarks added yet!</p> -->
+<mat-card class="info-text mat-body-1">
+  <h1>Benchmarks</h1>
+  <p *ngIf="benchmarks.length <= 3 && !isLoading">
+    Make this space your own. You can record your personal best or set your goals. And when you crush them, keep
+    updating them!
+    <a mat-button color="primary" routerLink="benchmarkcreate">Click to add</a>
+  </p>
+</mat-card>
+<mat-card class="benchmarks" *ngFor="let benchmark of benchmarks">
+  <!-- <mat-grid-tile *ngFor="let benchmark of benchmarks" role="listitem"> -->
+  <ul>
+    <li><strong>{{benchmark.type}}:</strong> {{ benchmark.title }}</li>
+  </ul>
+  <ul>
+    <li><strong>Result:</strong> {{ benchmark.content }}</li>
+  </ul>
+  <ul>
+    <li> <a [routerLink]="['/edit-benchmark', benchmark.id]"><i class="material-icons">edit</i>
+      </a>
+      <a (click)="onDelete(benchmark.id)"><i class="material-icons">delete</i></a></li>
+  </ul>
+
+
+  <!-- </mat-grid-tile> -->
+</mat-card>
+
+<!-- <div class="benchmark-container">
+  <div class="row">
+    <div class="col-6-s" *ngFor="let benchmark of benchmarks">
+      <mat-card>
+        <div class="header">{{ benchmark.title }}</div>
+        <div class="content">{{ benchmark.content }}</div>
+        <a [routerLink]="['/edit-benchmark', benchmark.id]"><i class="material-icons">edit</i>
+        </a>
+        <a (click)="onDelete(benchmark.id)"><i class="material-icons">delete</i></a>
+      </mat-card>
+    </div>
+  </div>
+</div> -->
